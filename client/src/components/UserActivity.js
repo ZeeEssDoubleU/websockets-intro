@@ -32,9 +32,9 @@ const Container = styled.aside`
 	overflow: auto;
 
 	ul {
-		padding: 9px;
+		padding: 0.75rem;
 		list-style: none;
-		font-size: 12px;
+		font-size: 0.75rem;
 		color: #4e4e4e;
 
 		li {

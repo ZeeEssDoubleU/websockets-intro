@@ -39,8 +39,8 @@ const Container = styled.div`
 	display: grid;
 	grid-template-columns: 1fr 300px;
 	gap: 1rem;
-	overflow: auto;
 	height: 100%;
+	overflow: auto;
 	padding: 1rem 4rem;
 	background: #eee;
 `;
@@ -54,6 +54,6 @@ const StyledEditor = styled(MediumEditor)`
 	overflow: auto;
 	outline: none;
 	border: 1px solid #ccc;
-	padding: 20px;
+	padding: 1.25rem;
 	background: #fff;
 `;

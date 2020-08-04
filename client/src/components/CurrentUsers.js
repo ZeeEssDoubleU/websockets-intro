@@ -12,20 +12,14 @@ export default function CurrentUsers({ state }) {
 	return (
 		<Container>
 			{state.currentUsers.map((user) => (
-				<>
-					<UserInfo id={user} key={user}>
-						<Avatar
-							style={{
-								backgroundColor: user.randomcolor,
-							}}
-							size={40}
-							string={user}
-						/>
+				<React.Fragment key={user}>
+					<UserInfo id={user}>
+						<Avatar size={40} string={user} />
 					</UserInfo>
-					<UncontrolledTooltip placement="top" target={user}>
+					<UncontrolledTooltip placement="auto" target={user}>
 						{user}
 					</UncontrolledTooltip>
-				</>
+				</React.Fragment>
 			))}
 		</Container>
 	);
@@ -36,10 +30,8 @@ export default function CurrentUsers({ state }) {
 //**************
 
 const Avatar = styled(Identicon)`
-	height: 64px;
-	width: 64px;
-	border-radius: 50%;
-	overflow: hidden;
+	height: 100%;
+	width: 100%;
 `;
 const Container = styled.div`
 	display: flex;
@@ -48,9 +40,10 @@ const Container = styled.div`
 	overflow: auto;
 `;
 const UserInfo = styled.span`
-	width: 40px;
-	height: 40px;
+	width: 2.5rem;
+	height: 2.5rem;
+	margin-right: 0.75rem;
 	border-radius: 50%;
-	margin-right: 10px;
+	overflow: hidden;
 	background: #fff;
 `;

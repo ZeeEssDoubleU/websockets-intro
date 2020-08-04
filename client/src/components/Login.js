@@ -1,7 +1,7 @@
 import React, { forwardRef } from "react";
 import styled from "styled-components/macro";
 // import components
-import { UncontrolledTooltip } from "reactstrap";
+import { Card } from "reactstrap";
 import Identicon from "react-identicons";
 import MediumEditor from "react-medium-editor";
 // import styles
@@ -20,28 +20,19 @@ const Login = forwardRef(({ loginUser }, ref) => {
 
 	return (
 		<Container>
-			<div className="account__wrapper">
-				<div className="account__card">
-					<div className="account__profile">
-						<Identicon
-							className="account__avatar"
-							size={64}
-							string="randomness"
-						/>
-						<p className="account__name">Hello, user!</p>
-						<p className="account__sub">Join to edit the document</p>
-					</div>
-					<form onSubmit={onSubmit}>
-						<input name="username" ref={ref} className="form-control" />
-						<button
-							type="submit"
-							className="btn btn-primary account__btn"
-						>
-							Join
-						</button>
-					</form>
-				</div>
-			</div>
+			<StyledCard>
+				<Profile>
+					<Avatar size={64} string="randomness" />
+					<Name>Hello, user!</Name>
+					<Sub>Join to edit the document</Sub>
+				</Profile>
+				<form onSubmit={onSubmit}>
+					<input name="username" ref={ref} className="form-control" />
+					<button type="submit" className="btn btn-primary account__btn">
+						Join
+					</button>
+				</form>
+			</StyledCard>
 		</Container>
 	);
 });
@@ -51,10 +42,41 @@ export default Login;
 // styles
 //**************
 
+const Avatar = styled(Identicon)`
+	height: 4rem;
+	width: 4rem;
+	border-radius: 50%;
+	overflow: hidden;
+`;
 const Container = styled.div`
+	display: grid;
+	align-content: center;
 	height: 100%;
 	width: 100%;
-	display: flex;
-	overflow-y: auto;
 	background: #eee;
+`;
+const Name = styled.p`
+	font-size: 0.75rem;
+	text-transform: uppercase;
+	font-weight: 700;
+	line-height: 1rem;
+	margin: 0.25rem 0 0.25rem 0;
+`;
+const Profile = styled.div`
+	text-align: center;
+`;
+const StyledCard = styled(Card)`
+	/* will keep width without squishing like justify-content in parent */
+	justify-self: center;
+	width: calc(100% - 1rem);
+	max-width: 30rem;
+	padding: 3rem 4rem;
+	background-color: #fff;
+`;
+const Sub = styled.p`
+	margin-top: 0;
+	margin-bottom: 0.75rem;
+	color: #656262;
+	font-size: 0.75rem;
+	line-height: 1rem;
 `;
