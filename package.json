@@ -1,0 +1,30 @@
+{
+	"name": "websockets-intro",
+	"version": "1.0.0",
+	"description": "A websockets tutorial.  Building a collaborative document editor.",
+	"main": "index.js",
+	"dependencies": {
+		"concurrently": "^5.2.0"
+	},
+	"devDependencies": {},
+	"scripts": {
+		"server": "npm start --prefix server",
+		"server-dev": "npm run dev --prefix server",
+		"server-i": "npm install --prefix server",
+		"server-update": "npm update --prefix server",
+		"client": "npm start --prefix client",
+		"client-i": "npm install --prefix client",
+		"client-update": "npm update --prefix client",
+		"all-i": "npm i && npm run server-i && npm run client-i",
+		"all-update": "npm update && npm run server-update && npm run client-update",
+		"dev": "concurrently 'npm run server-dev' 'npm run client'",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [],
+	"author": "Zachary Williams <zak.williams2287@gmail.com>",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/ZeeEssDoubleU/websockets-intro/issues"
+	},
+	"homepage": "https://github.com/ZeeEssDoubleU/websockets-intro#readme"
+}

@@ -1,0 +1,21 @@
+{
+	"name": "server",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"start": "node -r esm index.js",
+		"dev": "nodemon -r esm index.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "Zachary Williams <zak.williams2287@gmail.com>",
+	"license": "MIT",
+	"dependencies": {
+		"date-fns": "^2.15.0",
+		"esm": "^3.2.25",
+		"http": "0.0.0",
+		"nodemon": "^2.0.4",
+		"uuid": "^8.3.0",
+		"websocket": "^1.0.31"
+	}
+}
